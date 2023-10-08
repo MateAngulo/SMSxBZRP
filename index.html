@@ -1,17 +1,51 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Sitio Web</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Innmersive World</title>
 </head>
 <body>
-    <div class="overlay" id="overlay">
-        <div class="popup" id="popup">
-            <h2>Lo siento, esta página solo es compatible con dispositivos Samsung.</h2>
-        </div>
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+     </div>
+     <div class="popup" id="popupDiv">
+        <span>Ya casi estás dentro de la experiencia Immensive World by Samsung x BZRP.</span>
+        <hr>
+        <div id="avisoDiv"></div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        // Función para verificar si el dispositivo es de Samsung
+        function esDispositivoSamsung() {
+            var userAgent = navigator.userAgent;
+            return /Samsung/i.test(userAgent);
+        }
+    
+        // Obtener el elemento avisoDiv por su ID
+        var avisoDiv = document.getElementById('avisoDiv');
+    
+        // Verificar si el dispositivo NO es de Samsung
+        if (!esDispositivoSamsung()) {
+            // Establecer el mensaje en rojo
+            avisoDiv.innerHTML = '<span style="color: red;">Este es el mensaje en rojo.</span>';
+        }
+    </script>
 </body>
 </html>
