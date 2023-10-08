@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    if (!/Samsung/.test(navigator.userAgent)) {
+    const isSamsung = /SAMSUNG/i.test(navigator.userAgent);
+
+    if (!isSamsung) {
         const overlay = document.getElementById("overlay");
         const popup = document.getElementById("popup");
         const closePopup = document.getElementById("closePopup");
