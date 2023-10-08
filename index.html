@@ -35,7 +35,7 @@
     // Función para verificar si el dispositivo es de Samsung
     function esDispositivoSamsung() {
         var userAgent = navigator.userAgent;
-        return /Samsung/i.test(userAgent);
+        return userAgent.toLowerCase().includes("samsung");
     }
 
     // Obtener el elemento avisoDiv por su ID
