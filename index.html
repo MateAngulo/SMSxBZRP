@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detector NFC</title>
+</head>
+<body>
+    <div id="message"></div>
+    <img id="nfcImage" src="" alt="Imagen NFC" style="display: none;">
+    
+    <script>
+        // Función para manejar la lectura de la etiqueta NFC
+        function handleNFC(event) {
+            const data = event.tag && event.tag.id;
+            
+            if (data.includes("NASHE")) {
+                // Cambia la imagen aquí
+                const nfcImage = document.getElementById("nfcImage");
+                nfcImage.src = "https://estaticos-cdn.elperiodico.com/clip/59fa279f-ace3-4b2c-9375-aa6276df4649_alta-libre-aspect-ratio_default_0.jpg"; // Cambia la ruta de la imagen
+                nfcImage.style.display = "block"; // Muestra la imagen
+                
+                // Puedes agregar aquí cualquier otro código que desees ejecutar cuando se detecta la etiqueta NFC
+            } else {
+                document.getElementById("message").innerHTML = "Etiqueta NFC detectada, pero no contiene 'NASHE'.";
+            }
+        }
+        
+        // Agrega un event listener para la lectura de etiquetas NFC
+        if ('NDEFReader' in window) {
+            const nfcReader = new NDEFReader();
+            nfcReader.scan().then(() => {
+                nfcReader.onreading = handleNFC;
+            }).catch(error => {
+                console.error('Error al iniciar la lectura NFC:', error);
+            });
+        } else {
+            document.getElementById("message").innerHTML = "Tu dispositivo no es compatible con la lectura de NFC.";
+        }
+    </script>
+</body>
+</html>
