@@ -32,20 +32,23 @@
         <div id="avisoDiv"></div>
     </div>
     <script>
-        // Función para verificar si el dispositivo es de Samsung
-        function esDispositivoSamsung() {
-            var userAgent = navigator.userAgent;
-            return /Samsung/i.test(userAgent);
-        }
-    
-        // Obtener el elemento avisoDiv por su ID
-        var avisoDiv = document.getElementById('avisoDiv');
-    
-        // Verificar si el dispositivo NO es de Samsung
-        if (!esDispositivoSamsung()) {
-            // Establecer el mensaje en rojo
-            avisoDiv.innerHTML = '<span style="color: red;">Este es el mensaje en rojo.</span>';
-        }
-    </script>
+    // Función para verificar si el dispositivo es de Samsung
+    function esDispositivoSamsung() {
+        var userAgent = navigator.userAgent;
+        return /Samsung/i.test(userAgent);
+    }
+
+    // Obtener el elemento avisoDiv por su ID
+    var avisoDiv = document.getElementById('avisoDiv');
+
+// Verificar si el dispositivo es de Samsung
+if (esDispositivoSamsung()) {
+        // Establecer el mensaje en azul
+        avisoDiv.innerHTML = '<span style="color: blue;">Falta Poco</span>';
+    } else {
+        // Si no es Samsung, establecer el mensaje en rojo
+        avisoDiv.innerHTML = '<span style="color: red;">UPS</span>';
+    }
+</script>
 </body>
 </html>
