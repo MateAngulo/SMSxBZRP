@@ -8,6 +8,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Immersive World by Samsung</title>
     <link rel="shortcut icon" href="icon.png" type="image/png">
+    <meta property="og:title" content="Immersive World by Samsung x BZRP"/>
+    <meta property="og:image" content="media/image/meta.png"/>
 </head>
 <body>
     <div class="background">
@@ -30,13 +32,17 @@
         <span></span>
      </div>
      <div class="popup" id="popupDiv">
-        <span>Immersive World by Samsung x BZRP.</span>
+        <span class="titlepopup">Immersive World by Samsung x BZRP.</span>
         <hr>
         <div id="avisoDiv"></div>
-        <div class="MasInfo">
+        <a href="#" id="mostrar-imagen"><div class="MasInfo">
             <i class='bx bx-info-circle'></i>
-            <span>Pulsa aqui para mas info</span>
-        </div>
+            <span class="masinfotext">Pulsa aqui para mas info</span>
+        </div></a>
+    </div>
+    <div id="imagen-en-pantalla-completa">
+        <span id="cerrar" onclick="cerrarImagen()">X</span>
+        <img src="media/image/Immersive World by Samsung (1).png" alt="Imagen en pantalla completa">
     </div>
     <script>
     // Función para verificar si el dispositivo es un dispositivo Android
@@ -59,8 +65,9 @@ if (esDispositivoAndroid()) {
         masInfoElement.style.display = "inline";
         avisoDiv.style.marginBottom = "10%";
         avisoDiv.style.marginTop = "5%";
-        avisoDiv.innerHTML = '<span style=" font-size: 130%; color: red;">Esta web es exclusiva de Samsung, vuelve desde el navegador correcto</span>';
+        avisoDiv.innerHTML = '<span style=" font-size: 140%; color: red;">Esta web es exclusiva de Samsung, vuelve desde el navegador y dispositivo compatible.</span>';
     }
 </script>
+<script src="script.js"></script>
 </body>
 </html>
