@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Innmersive World</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Immersive World by Samsung</title>
+    <link rel="shortcut icon" href="icon.png" type="image/png">
 </head>
 <body>
     <div class="background">
@@ -27,27 +30,36 @@
         <span></span>
      </div>
      <div class="popup" id="popupDiv">
-        <span>Ya casi estás dentro de la experiencia Immensive World by Samsung x BZRP.</span>
+        <span>Immersive World by Samsung x BZRP.</span>
         <hr>
         <div id="avisoDiv"></div>
+        <div class="MasInfo">
+            <i class='bx bx-info-circle'></i>
+            <span>Pulsa aqui para mas info</span>
+        </div>
     </div>
     <script>
-    // Función para verificar si el dispositivo es de Samsung
-    function esDispositivoSamsung() {
+    // Función para verificar si el dispositivo es un dispositivo Android
+    function esDispositivoAndroid() {
         var userAgent = navigator.userAgent;
-        return userAgent.toLowerCase().includes("samsung");
+        return /Samsung/i.test(userAgent) && /Chrome/i.test(userAgent);
     }
 
     // Obtener el elemento avisoDiv por su ID
     var avisoDiv = document.getElementById('avisoDiv');
 
 // Verificar si el dispositivo es de Samsung
-if (esDispositivoSamsung()) {
+if (esDispositivoAndroid()) {
         // Establecer el mensaje en azul
-        avisoDiv.innerHTML = '<span style="color: blue;">Falta Poco</span>';
+        avisoDiv.style.marginTop = "5%";
+        avisoDiv.innerHTML = '<span style= "font-size:155%; color: #5F00CA;">¡Ya estas listo! <br> <span style= "color: #003AFF; font-size: 65%">La sala inmersiva de Samsung está lista y esperando por ti, empieza a correr el tiempo.</span>';
     } else {
         // Si no es Samsung, establecer el mensaje en rojo
-        avisoDiv.innerHTML = '<span style="color: red;">UPS</span>';
+        var masInfoElement = document.querySelector(".MasInfo");
+        masInfoElement.style.display = "inline";
+        avisoDiv.style.marginBottom = "10%";
+        avisoDiv.style.marginTop = "5%";
+        avisoDiv.innerHTML = '<span style=" font-size: 130%; color: red;">Esta web es exclusiva de Samsung, vuelve desde el navegador correcto</span>';
     }
 </script>
 </body>

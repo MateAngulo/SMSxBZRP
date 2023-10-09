@@ -16,13 +16,11 @@ body{
 }
 .popup{
     text-align: center;
-    font-size: 110%;
-    
     padding: 10px;
     padding-top: 30px;
+    padding-bottom: 20px;
     display: block;
-    width: 50%;
-    max-width: 70%;
+    max-width: 60%;
     min-height: 30%;
     position: absolute;
     justify-content: center;
@@ -32,19 +30,23 @@ body{
     color: rgb(224, 220, 220);
     border-radius: 15px;
     top: 30%;
-    left: 24%;
+    left: 20%;
+    right: 20%;
+    border: 2px white solid;
 }
-popup hr{
+.popup hr{
     margin-top: 5%;
     width: 90%;
     margin-left: 4%;
+}
+.popup span{
+    font-size: 190%;
 }
 @keyframes move {
     100% {
         transform: translate3d(0, 0, 1px) rotate(360deg);
     }
 }
-
 .background {
     position: fixed;
     width: 100vw;
@@ -53,6 +55,14 @@ popup hr{
     left: 0;
     background: #080808;
     overflow: hidden;
+}
+.MasInfo{
+    padding-top: 30px;
+    display: none;
+    border-radius: 5px;
+    padding: 10px 5% 10px 5%;
+    font-size: 50%;
+    border: solid 1px #ededed;
 }
 
 .background span {
@@ -220,4 +230,17 @@ popup hr{
     animation-delay: -53s;
     transform-origin: 8vw 13vh;
     box-shadow: -64vmin 0 8.636674372316891vmin currentColor;
+}
+
+
+@media only screen and (max-width: 423px) {
+    .popup{
+        max-width: 90%;
+        left: 5%;
+        right: 5%;
+    }
+    .AvisoDiv{
+        color: #cc8100;
+        margin-bottom: 15%;
+    }
 }
